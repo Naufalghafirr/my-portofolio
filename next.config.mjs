@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    publicRuntimeConfig: {
+        apiUrl: `/api`,
+  },
+}
 
 export default nextConfig;
