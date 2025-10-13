@@ -74,12 +74,15 @@ export default function Home() {
   const skills = [
     { name: 'React', icon: FaReact, color: 'blue.400' },
     { name: 'JavaScript', icon: FaJs, color: 'yellow.400' },
-    { name: 'Node.js', icon: FaNodeJs, color: 'green.400' },
     { name: 'PHP', icon: FaPhp, color: 'blue.500' },
     { name: 'HTML5', icon: FaHtml5, color: 'orange.400' },
     { name: 'MySQL', icon: FaDatabase, color: 'green.400' },
     { name: 'CSS3', icon: FaCss3Alt, color: 'blue.300' },
     { name: 'MongoDB', icon: FaDatabase, color: 'green.400' },
+    { name: 'Laravel', icon: FaPhp, color: 'red.500' },
+    { name: 'git', icon: FaCode, color: 'orange.400' },
+    { name: 'UI/UX Design', icon: FaPalette, color: 'purple.400' },
+    { name: 'Next js', icon: FaReact, color: 'blue.400' },
   ]
 
   const projects = [
@@ -348,39 +351,57 @@ export default function Home() {
 
       {/* Skills Section */}
       <Box id="skills" py={20}>
-        <Container maxW="container.xl">
-          <VStack spacing={12}>
-            <Heading size="xl" textAlign="center">Keahlian Saya</Heading>
-            <SimpleGrid columns={{ base: 2, md: 4, lg: 7 }} spacing={8} maxW="container.lg" mx="auto">
-              {skills.map((skill) => (
-                <VStack key={skill.name} spacing={3}>
-                  <Icon as={skill.icon} boxSize={12} color={skill.color} />
-                  <Text fontWeight="medium">{skill.name}</Text>
-                </VStack>
-              ))}
-            </SimpleGrid>
-            
-            <Divider />
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} w="full" justifyContent="center" maxW="800px" mx="auto">
+  <Container maxW="container.xl">
+    <VStack spacing={12}>
+      <Heading size="xl" textAlign="center">
+        Keahlian Saya
+      </Heading>
 
-            <CardSkills 
-              cardBg={cardBg} 
-              textColor={textColor} 
-              title="Frontend Development" 
-              description="Mengembangkan antarmuka pengguna yang responsif dan interaktif menggunakan Next.js, Laravel, dan framework modern lainnya." 
-            />
-
-            <CardSkills 
-              cardBg={cardBg} 
-              textColor={textColor} 
-              title="Backend Development" 
-              description="Mengembangkan API yang stabil dan skalabel menggunakan Next.js, Laravel, serta berbagai database seperti MySQL dan PostgreSQL." 
-            />
-
-            </SimpleGrid>
+      <SimpleGrid
+        textAlign="center"
+        columns={{ base: 2, md: 4, lg: 7 }}
+        spacing={8}
+        maxW="container.lg"
+        mx="auto"
+        justifyItems="center"    
+        alignItems="center"  
+      >
+        {skills.map((skill) => (
+          <VStack key={skill.name} spacing={3} align="center">
+            <Icon as={skill.icon} boxSize={12} color={skill.color} />
+            <Text fontWeight="medium">{skill.name}</Text>
           </VStack>
-        </Container>
-      </Box>
+        ))}
+      </SimpleGrid>
+
+      <Divider />
+
+      <SimpleGrid
+        columns={{ base: 1, md: 2 }}
+        spacing={8}
+        w="full"
+        justifyContent="center"
+        maxW="800px"
+        mx="auto"
+      >
+        <CardSkills
+          cardBg={cardBg}
+          textColor={textColor}
+          title="Frontend Development"
+          description="Mengembangkan antarmuka pengguna yang responsif dan interaktif menggunakan Next.js, Laravel, dan framework modern lainnya."
+        />
+
+        <CardSkills
+          cardBg={cardBg}
+          textColor={textColor}
+          title="Backend Development"
+          description="Mengembangkan API yang stabil dan skalabel menggunakan Next.js, Laravel, serta berbagai database seperti MySQL dan PostgreSQL."
+        />
+      </SimpleGrid>
+    </VStack>
+  </Container>
+</Box>
+
 
       {/* Projects Section */}
       <ProjectsSection 
