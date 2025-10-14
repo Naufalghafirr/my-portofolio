@@ -33,7 +33,7 @@ export default function Navigation({ listAnchor = [], icon = null }) {
     <Box bg={cardBg} boxShadow="sm" position="sticky" top={0} zIndex={10}>
         <Container maxW="container.xl" py={4}>
           <Flex align="center">
-            <Heading size="lg" color="blue.500"><Link href="#home" _hover={{ textDecoration: "none", color: "blue.400" }}>Portofolio Naufal</Link></Heading>
+            <Heading size="lg" color="blue.500"><Link href="#home" _hover={{ textDecoration: "none", color: "blue.400" }}>My Portofolio</Link></Heading>
             <Spacer />
             {/* Navigasi Desktop */}
             <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>

@@ -67,7 +67,7 @@ export default function Home() {
     {anchor: "#skills", title: "Skills"}, 
     {anchor: "#projects", title: "Projects"},
     {anchor: "#education", title: "Education"},
-    {anchor: "#certifications", title: "Sertifikasi"},
+    {anchor: "#certifications", title: "Certifications"},
     {anchor: "#contact", title: "Contact"}
   ]
 
@@ -284,7 +284,7 @@ export default function Home() {
                   />
                 </Heading>
                 <Text fontSize="xl" color={textColor} maxW="600px">
-                Saya adalah seorang junior software engineer dengan pengalaman lebih dari satu tahun dalam pengembangan aplikasi  .
+                Saya adalah seorang junior software engineer dengan pengalaman lebih dari satu tahun dalam pengembangan aplikasi.
                 </Text>
                 <HStack spacing={4}>
                   <Button colorScheme="blue" onClick={() => window.open('https://github.com/naufalghafirr', '_blank')} size="lg">
