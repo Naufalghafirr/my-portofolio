@@ -443,11 +443,11 @@ export default function Home() {
                   </HStack>
                   <HStack>
                     <Icon as={FaLinkedin} color="blue.500" />
-                    <Text><Link href="https://www.linkedin.com/in/naufal-ghafir" target="_blank">Naufal Gahfir</Link></Text>
+                    <Text><Link href="https://www.linkedin.com/in/naufal-ghafir" target="_blank">Naufal Ghafir</Link></Text>
                   </HStack>
                   <HStack>
                     <Icon as={FaGithub} color="gray.600" />
-                    <Text><Link href="https://github.com/naufalghafirr" target="_blank">Naufal Gahfir</Link></Text>
+                    <Text><Link href="https://github.com/naufalghafirr" target="_blank">Naufal Ghafir</Link></Text>
                   </HStack>
                 </VStack>
               </VStack>
