@@ -10,7 +10,7 @@ export default function ProjectsSection({
     <Box id="projects" py={20} bg={cardBg}>
       <Container maxW="container.xl">
         <VStack spacing={12}>
-          <Heading size="xl" textAlign="center">Proyek Yang Saya Kerjakan</Heading>
+          <Heading size="xl" textAlign="center">My Projects</Heading>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
             {projects.map((project, index) => (
               <ProjectCard 

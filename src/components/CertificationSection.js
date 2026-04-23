@@ -17,7 +17,7 @@ export default function CertificationSection({
     <Box id="certifications" py={20} bg={cardBg}>
       <Container maxW="container.xl">
         <VStack spacing={12}>
-          <Heading size="xl" textAlign="center">Sertifikasi</Heading>
+          <Heading size="xl" textAlign="center">Certifications</Heading>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
             {certifications.map((cert, index) => (
               <CertificationCard 

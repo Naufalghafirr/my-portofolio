@@ -8,40 +8,36 @@ import {
   HStack,
   SimpleGrid,
   Card,
-  CardBody,
-  Input,
-  Textarea,
-  CardHeader,
   Badge,
   Icon,
-  Flex,
-  Spacer,
   Link,
   Image,
   Divider,
   useColorModeValue,
-  IconButton,
-  Center,
-  Stack
 } from '@chakra-ui/react'
 import { 
   FaGithub, 
   FaLinkedin, 
-  FaTwitter, 
   FaEnvelope, 
-  FaCode, 
-  FaPalette, 
-  FaMobile, 
-  FaDatabase,
+  FaFire,
   FaReact,
   FaJs,
-  FaNodeJs,
+  FaLaravel,
   FaPhp,
   FaHtml5,
   FaCss3Alt,
   FaHome,
+  FaBootstrap,
+  FaWordpress,
+  FaFigma,
 } from 'react-icons/fa'
-import axios from 'axios'
+import { BiLogoPostgresql } from "react-icons/bi";
+import { RiNextjsFill } from "react-icons/ri";
+import { 
+  SiMysql,
+  SiCodeigniter
+} from "react-icons/si";
+import { DiMongodb } from "react-icons/di";
 import { useState } from 'react'
 import { useToast } from '@chakra-ui/react'
 
@@ -72,23 +68,28 @@ export default function Home() {
   ]
 
   const skills = [
-    { name: 'React', icon: FaReact, color: 'blue.400' },
+    { name: 'HTML5', icon: FaHtml5, color: 'orange.400' },
+    { name: 'CSS3', icon: FaCss3Alt, color: 'blue.300' },
+    { name: 'Bootstrap', icon: FaBootstrap, color: 'purple.300' },
     { name: 'JavaScript', icon: FaJs, color: 'yellow.400' },
     { name: 'PHP', icon: FaPhp, color: 'blue.500' },
-    { name: 'HTML5', icon: FaHtml5, color: 'orange.400' },
-    { name: 'MySQL', icon: FaDatabase, color: 'green.400' },
-    { name: 'CSS3', icon: FaCss3Alt, color: 'blue.300' },
-    { name: 'MongoDB', icon: FaDatabase, color: 'green.400' },
-    { name: 'Laravel', icon: FaPhp, color: 'red.500' },
-    { name: 'git', icon: FaCode, color: 'orange.400' },
-    { name: 'UI/UX Design', icon: FaPalette, color: 'purple.400' },
-    { name: 'Next js', icon: FaReact, color: 'blue.400' },
+    { name: 'Laravel', icon: FaLaravel, color: 'red.500' },
+    { name: 'CodeIgniter 4', icon: SiCodeigniter, color: 'orange.400' },
+    { name: 'WordPress', icon: FaWordpress, color: 'blue.400' },
+    { name: 'React', icon: FaReact, color: 'blue.400' },
+    { name: 'Next js', icon: RiNextjsFill, color: 'black.400' },
+    { name: 'MySQL', icon: SiMysql, color: 'blue.400' },
+    { name: 'MongoDB', icon: DiMongodb, color: 'green.400' },
+    { name: 'PostgreSQL', icon: BiLogoPostgresql, color: 'blue.400' },
+    { name: 'Rest API', icon: FaFire, color: 'orange.400' },
+    { name: 'GitHub', icon: FaGithub, color: 'black.400' },
+    { name: 'UI/UX Design', icon: FaFigma, color: 'purple.400' },
   ]
 
   const projects = [
     {
       title: 'E-Tiket Platform Genstix.id',
-      description: 'Development platform e-tiket lengkap dengan sistem pembayaran dan manajemen event.',
+      description: 'Complete e-ticket platform development with payment system and event management.',
       tech: ['next js', 'Postgres'],
       image: '/projectImage/logo-gentix.png',
       link: 'https://genstix.id',
@@ -96,17 +97,27 @@ export default function Home() {
     },
     {
       title: 'Pkk Application',
-      description: 'Development aplikasi pkk lengkap dengan sistem pencatatan data perpustakaan, posyandu, dan lainnya.',
+      description: 'Complete PKK application development with library data recording, posyandu, and other systems.',
       tech: ['Laravel', 'MySQL'],
+      image: '/projectImage/logo-pkk.png',
       code: 'https://github.com/Ardiiysh/Apk-pkk-l8/tree/codinggofir',
       jobTitle: 'Fullstack Developer'
     },
     {
       title: 'KBM Application',
-      description: 'Development aplikasi tempat membaca buku.',
+      description: 'Book reading application development.',
       tech: ['Codeigniter 4', 'MongoDB'],
       image: '/projectImage/logo-kbm.png',
       link: 'https://kbm.id',
+      jobTitle: 'Fullstack Developer'
+    },
+    {
+      title: 'Sukatani Onchain Game',
+      description: 'WEB 3-based farming game. Using blockchain technology to create a unique and innovative gaming experience.',
+      tech: ['Next Js', 'PostgreSQL', 'Web3', 'Metamask', 'Base App', 'Tiled Map'],
+      image: '/projectImage/logo-sukatani.png',
+      link: 'https://sukatani.fun',
+      code: 'https://github.com/deranalabs/SukataniP2E',
       jobTitle: 'Fullstack Developer'
     }
   ]
@@ -114,19 +125,19 @@ export default function Home() {
   const education = [
     {
       title: 'Universitas Pamulang',
-      description: 'Mahasiswa Sistem Infromasi dengan fokus pada pengembangan web dan mobile application.',
-      tech: ['Sistem Infromasi', 'S1'],
-      year: '2024 - Sekarang',
+      description: 'Information Systems student with focus on web and mobile application development.',
+      tech: ['Information Systems', 'Bachelor'],
+      year: '2024 - Present',
     },
     {
       title: 'SMK Wikrama 1 Garut',
-      description: 'Lulusan Rekayasa Perangkat Lunak dengan predikat terbaik.',
-      tech: ['Rekayasa Perangkat Lunak', 'SMK'],
+      description: 'Software Engineering graduate with best honors.',
+      tech: ['Software Engineering', 'Vocational School'],
       year: '2021 - 2023',
     },
     {
       title: 'SMP IT Nururrahman',
-      description: 'Lulusan dengan nilai rata-rata yang baik dan aktif dalam kegiatan ekstrakurikuler.',
+      description: 'Graduate with good average grades and active in extracurricular activities.',
       tech: ['SMP', 'Depok'],
       year: '2018 - 2021',
     }
@@ -135,34 +146,34 @@ export default function Home() {
   const certifications = [
     {
       title: 'Toeic dengan nilai 505',
-      description: 'Sertifikasi bahasa inggris dengan nilai 505.',
+      description: 'English language certification with score of 505.',
       issuer: 'TOEIC',
       type: 'English',
-      date: '2 Agustus 2021',
+      date: 'August 2, 2021',
       image: '/certifications/toeic.pdf'
     },
     {
       title: 'Dasar Pemrograman Web',
-      description: 'Sertifikasi untuk menguasai dasar pemrograman web.',
+      description: 'Certification to master web programming fundamentals.',
       issuer: 'Dicoding',
       type: 'Web Development',
-      date: '29 Maret 2023',
+      date: 'March 29, 2023',
       image: '/certifications/dasar_web.pdf'
     },
     {
       title: 'Certiport Certification',
-      description: 'Sertifikasi profesional dalam bidang teknologi informasi dan komunikasi.',
+      description: 'Professional certification in information and communication technology.',
       issuer: 'Certiport',
       type: 'IT Certification',
-      date: '12 Juni 2023',
+      date: 'June 12, 2023',
       image: '/certifications/certificate certiport.pdf'
     },
     {
       title: 'Belajar Dasar Pemrograman Web ke 2',
-      description: 'Sertifikasi algoritma dan struktur data menggunakan JavaScript.',
+      description: 'Algorithm and data structure certification using JavaScript.',
       issuer: 'freeCodeCamp',
       type: 'Web Development',
-      date: '18 September 2024',
+      date: 'September 18, 2024',
       image: '/certifications/dasar_web2.pdf'
     },
     {
@@ -170,16 +181,16 @@ export default function Home() {
       description: 'Beyond the Basics: Elevate Your Career as a Full Stack Developer in 2024',
       issuer: 'Dicoding',
       type: 'Full Stack Development',
-      date: '26 September 2024',
+      date: 'September 26, 2024',
       image: '/certifications/idcamp.pdf'
     },
     
     {
       title: 'Dasar Pemrograman JavaScript',
-      description: 'Sertifikasi dasar untuk memahami dasar pemrograman JavaScript.',
+      description: 'Basic certification to understand JavaScript programming fundamentals.',
       issuer: 'Dicoding',
       type: 'JavaScript',
-      date: '27 September 2024',
+      date: 'September 27, 2024',
       image: '/certifications/dasar_js.pdf'
     }
   ]
@@ -252,7 +263,7 @@ export default function Home() {
       <Box id="home" bgImage={image} py={20}>
         <Container maxW="container.xl">
           <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={12} align="center">
-            {/* Gambar Profil Kiri */}
+            {/* Left Profile Image */}
             <Box display={{ base: "none", lg: "block" }}>
               <Image
                 src="/image/my-profile.jpg"
@@ -266,11 +277,11 @@ export default function Home() {
               />
             </Box>
 
-            {/* Konten Kanan */}
+            {/* Right Content */}
             <VStack spacing={8} textAlign={{ base: "center", lg: "left" }} align={{ base: "center", lg: "start" }}>
               <VStack spacing={4} align={{ base: "center", lg: "start" }}>
                 <Heading size="lg" color="blue.500">
-                  Halo, Saya{' '}
+                  Hello, I'm{' '}
                   <Typewriter 
                     texts={[
                       "Programmer",
@@ -284,11 +295,11 @@ export default function Home() {
                   />
                 </Heading>
                 <Text fontSize="xl" color={textColor} maxW="600px">
-                Saya adalah seorang junior software engineer dengan pengalaman lebih dari satu tahun dalam pengembangan aplikasi.
+                I am a junior software engineer with over a year of experience in application development.
                 </Text>
                 <HStack spacing={4}>
                   <Button colorScheme="blue" onClick={() => window.open('https://github.com/naufalghafirr', '_blank')} size="lg">
-                    Lihat Proyek Saya
+                    View My Projects
                   </Button>
                   <CVModal />
                 </HStack>
@@ -302,37 +313,37 @@ export default function Home() {
       <Box id="about" py={20} bg={cardBg}>
         <Container maxW="container.xl">
           <VStack spacing={12}>
-            <Heading size="xl" textAlign="center">Tentang Saya</Heading>
+            <Heading size="xl" textAlign="center">About Me</Heading>
             <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={12} align="center">
-              {/* Konten Kiri */}
+              {/* Left Content */}
               <VStack spacing={6} align="left">
                 <Text fontSize="lg" color={textColor} textAlign="justify">
-                  Saya adalah seorang developer yang memiliki passion dalam teknologi web. 
-                  Dengan pengalaman dalam berbagai teknologi modern, saya senang menciptakan 
-                  solusi yang efisien dan user-friendly.
+                  I am a developer with a passion for web technology. 
+                  With experience in various modern technologies, I enjoy creating 
+                  efficient and user-friendly solutions.
                 </Text>
                 <Text fontSize="lg" color={textColor} textAlign="justify">
-                  Selain coding, saya juga suka belajar teknologi baru dan berbagi 
-                  pengetahuan dengan komunitas developer. Saya percaya bahwa teknologi 
-                  harus digunakan untuk membuat hidup lebih baik.
+                  Besides coding, I also enjoy learning new technologies and sharing 
+                  knowledge with the developer community. I believe technology 
+                  should be used to make life better.
                 </Text>
                 <HStack spacing={4} wrap="wrap">
                   <Badge colorScheme="green" fontSize="sm" px={3} py={1}>
-                    {countExperience} Tahun Pengalaman
+                    {countExperience}+ Years Experience
                   </Badge>
                   <Badge colorScheme="blue" fontSize="sm" px={3} py={1}>
-                    {countProjects} Proyek Selesai
+                    {countProjects} Projects
                   </Badge>
                   <Badge colorScheme="blue" fontSize="sm" px={3} py={1}>
-                    {countEducation} Pendidikan Selesai
+                    {countEducation} Education
                   </Badge>
                   <Badge colorScheme="purple" fontSize="sm" px={3} py={1}>
-                    {countCertifications} Sertifikasi
+                    {countCertifications} Certifications
                   </Badge>
                 </HStack>
               </VStack>
               
-              {/* Gambar Kanan */}
+              {/* Right Image */}
               <Box display="flex" justifyContent="center" alignItems="center">
                 <Image
                   src="/image/profile.jpg"
@@ -354,7 +365,7 @@ export default function Home() {
   <Container maxW="container.xl">
     <VStack spacing={12}>
       <Heading size="xl" textAlign="center">
-        Keahlian Saya
+        My Skills
       </Heading>
 
       <SimpleGrid
@@ -388,14 +399,14 @@ export default function Home() {
           cardBg={cardBg}
           textColor={textColor}
           title="Frontend Development"
-          description="Mengembangkan antarmuka pengguna yang responsif dan interaktif menggunakan Next.js, Laravel, dan framework modern lainnya."
+          description="Developing responsive and interactive user interfaces using Next.js, Laravel, and other modern frameworks."
         />
 
         <CardSkills
           cardBg={cardBg}
           textColor={textColor}
           title="Backend Development"
-          description="Mengembangkan API yang stabil dan skalabel menggunakan Next.js, Laravel, serta berbagai database seperti MySQL dan PostgreSQL."
+          description="Developing stable and scalable APIs using Next.js, Laravel, and various databases like MySQL and PostgreSQL."
         />
       </SimpleGrid>
     </VStack>
@@ -428,13 +439,13 @@ export default function Home() {
       <Box id="contact" py={20}>
         <Container maxW="container.xl">
           <VStack spacing={12}>
-            <Heading size="xl" textAlign="center">Hubungi Saya</Heading>
+            <Heading size="xl" textAlign="center">Contact Me</Heading>
             <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={12} align="start">
               <VStack spacing={6} align="start">
-                <Heading size="lg">Mari Berkolaborasi!</Heading>
+                <Heading size="lg">Let's Collaborate!</Heading>
                 <Text fontSize="lg" color={textColor}>
-                  Saya selalu terbuka untuk mendiskusikan proyek baru, 
-                  ide kreatif, atau kesempatan untuk menjadi bagian dari visi Anda.
+                  I'm always open to discussing new projects, 
+                  creative ideas, or opportunities to be part of your vision.
                 </Text>
                 <VStack spacing={4} align="start">
                   <HStack>
@@ -485,7 +496,7 @@ export default function Home() {
               />
             </HStack> */}
             <Text color={textColor} textAlign="center">
-              © 2025 Naufal Ghafir Ramadhan.
+              © {new Date().getFullYear()} Naufal Ghafir Ramadhan.
             </Text>
           </VStack>
         </Container>

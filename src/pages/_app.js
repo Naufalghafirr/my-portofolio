@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>My Portofolio</title>
+        <title>Naufal Ghafir Ramadhan - Portofolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/image/logo.png"/>
       </Head>
