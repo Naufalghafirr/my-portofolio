@@ -28,6 +28,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>Naufal Ghafir Ramadhan - Portofolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="og:Naufal Ghafir Ramadhan" content="Portofolio Naufal Ghafir Ramadhan" />
         <meta name="google-site-verification" content="bfffLT1VDAAQVMeQeFj9wgBuEIAexcN6lRM5xHtHXVs" />
         <link rel="icon" href="/image/logo.png"/>
       </Head>
